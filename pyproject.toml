@@ -1,0 +1,10 @@
+[project]
+name = "chimera-project"
+version = "0.1.0"
+description = "Spec-first AI agent engineering foundation"
+authors = [{name = "Zemzem"}]
+
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
