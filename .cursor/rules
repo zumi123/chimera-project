@@ -1,0 +1,24 @@
+# Project Chimera — IDE Agent Rules
+
+Project Context
+---------------
+This is Project Chimera: an autonomous influencer system. Agents should treat `specs/` as the authoritative source-of-truth.
+
+Prime Directive
+---------------
+1. NEVER generate or modify implementation code without first referencing the relevant spec section in `specs/`.
+2. For any proposed code change, explain a short plan and list the exact spec file and section that authorises the change.
+
+Traceability
+------------
+- Every action should include `spec_version`, `run_id`, and a short justification string.
+
+Behaviour Rules
+--------------
+- Always produce a short plan before writing files.
+- Prefer creating or updating spec files rather than coding when requirements are ambiguous.
+- Run tests (`make test`) before proposing merges; if tests are not runnable, explain why.
+
+Collaboration
+-------------
+- Commit messages should reference the spec path (e.g., "Implementer: follow specs/technical.md#TrendFetcher").
