@@ -1,0 +1,9 @@
+review_policy:
+  name: "Chimera AI Review Policy"
+  checks:
+    - name: Spec Alignment
+      description: "Ensure code changes reference and conform to specs in `specs/` before merging."
+    - name: Security Scan
+      description: "Run basic security checks and flag usage of unsafe operations."
+    - name: Testing
+      description: "Require that tests exist for new features and that CI passes."
