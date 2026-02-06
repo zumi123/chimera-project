@@ -1,0 +1,22 @@
+flowchart TD
+
+    Coordinator[Coordinator Agent]
+    SkillDownload[Skill: Download]
+    SkillTranscribe[Skill: Transcribe]
+    SkillCompose[Skill: Compose]
+    JobQueue[(Job Queue)]
+    Postgres[(Postgres DB)]
+    S3[(Object Store)]
+    MCP[MCP Sense]
+
+    Coordinator --> JobQueue
+    JobQueue --> SkillDownload
+    JobQueue --> SkillTranscribe
+    JobQueue --> SkillCompose
+    SkillDownload --> S3
+    SkillTranscribe --> Postgres
+    SkillCompose --> S3
+    Coordinator --> MCP
+    SkillDownload --> MCP
+    SkillTranscribe --> MCP
+    SkillCompose --> MCP
