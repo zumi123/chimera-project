@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SkillInvocationResponse",
+  "type": "object",
+  "required": ["status", "output", "trace"],
+  "properties": {
+    "status": { "type": "string", "enum": ["ok", "error"] },
+    "output": { "type": "object" },
+    "trace": {
+      "type": "object",
+      "required": ["spec_version", "run_id"],
+      "properties": {
+        "spec_version": { "type": "string" },
+        "run_id": { "type": "string" }
+      }
+    }
+  }
+}

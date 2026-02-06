@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TrendFetcherResponse",
+  "type": "object",
+  "required": ["spec_version", "timestamp", "trends"],
+  "properties": {
+    "spec_version": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "trends": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "engagement_score", "sample_media_url"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "engagement_score": { "type": "number" },
+          "sample_media_url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}
